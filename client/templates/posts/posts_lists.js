@@ -3,7 +3,15 @@ Template.postsList.onRendered(function() {
   // _uihooks replace Meteor's default behavior
   this.find('.wrapper')._uihooks = {
 
-    // define hook whenever element's position changes
+    // define hook whenever a new post is inserted
+    insertElement: function(node, next) {
+      $(node)
+        .hide()
+        .insertBefore(next)
+        .fadeIn();
+    },
+
+    // define hook whenever a post's position changes
     moveElement: function(node, next) {
       var $node = $(node), $next = $(next);
       var oldTop = $node.offset().top;
@@ -37,6 +45,13 @@ Template.postsList.onRendered(function() {
       // reset everything to 0, animated
       $node.addClass('animate').css('top', 0);
       $inbetween.addClass('animate').css('top', 0);
+    },
+
+    // define hook whenever a post is deleted
+    insertElement: function(node, next) {
+      $(node).fadeOut(function() {
+        $(this).remove();
+      });
     }
   };
 });
