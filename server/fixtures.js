@@ -18,7 +18,9 @@ if (Posts.find().count() === 0) {
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: new Date(now - 7 * 3600 * 1000),
-    commentsCount: 2
+    commentsCount: 2,
+    upvoters: [],
+    votes: 0
   });
 
   Comments.insert({
@@ -43,7 +45,9 @@ if (Posts.find().count() === 0) {
     author: tom.profile.name,
     url: 'http://meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
   Posts.insert({
     title: 'The Meteor Book',
@@ -51,7 +55,9 @@ if (Posts.find().count() === 0) {
     author: tom.profile.name,
     url: 'http://themeteorbook.com',
     submitted: new Date(now - 12 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
   Posts.insert({
     title:'Architectural Notes on Meteor',
@@ -59,7 +65,9 @@ if (Posts.find().count() === 0) {
     author: tom.profile.name,
     url:'https://gist.github.com/debergalis/bf76084cdb1434d8733d',
     submitted: new Date(now - 13 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
   Posts.insert({
     title:'Javascript the Right Way',
@@ -67,7 +75,9 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: new Date(now - 14 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
   Posts.insert({
     title:'Why I Invest in Tools',
@@ -75,7 +85,9 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: new Date(now - 15 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
   for (var i = 0; i <= 20; i++) {
     Posts.insert({
@@ -84,7 +96,9 @@ if (Posts.find().count() === 0) {
       author: tom.profile.name,
       url:'http://www.bing.com/?q=test-' + i,
       submitted: new Date(now - (50 + i) * 3600 * 1000),
-      commentsCount: 0
+      commentsCount: 0,
+    upvoters: [],
+    votes: 0
     });
   };
 }
